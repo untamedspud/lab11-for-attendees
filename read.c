@@ -183,9 +183,9 @@ void * getQuestion( const char *filename, question *qu )
 
                         // read in question
                         fgets( buf, MAX_QUESTION_LENGTH, IN );
-        #ifdef DEBUG
+#ifdef DEBUG
                         printf( "Just read in '%s'.\n", buf );
-        #endif
+#endif
                         assert( isalnum( buf[0] ) || ispunct( buf[0] ) );
                         strcpy( qu->question, trim(buf) );
 
@@ -193,9 +193,9 @@ void * getQuestion( const char *filename, question *qu )
 
                         // read in options
                         fgets( buf, MAX_QUESTION_LENGTH, IN );
-        #ifdef DEBUG
+#ifdef DEBUG
                         printf( "Just read in '%s'.\n", buf );
-        #endif
+#endif
                         assert( buf[0] == '*' );
                         parseOptions( buf, qu );
 
@@ -203,9 +203,9 @@ void * getQuestion( const char *filename, question *qu )
 
                         // read in answers
                         fgets( buf, MAX_QUESTION_LENGTH, IN );
-        #ifdef DEBUG
+#ifdef DEBUG
                         printf( "Just read in '%s'.\n", buf );
-        #endif
+#endif
                         qu->answer = getAnswer( trim(buf), qu );
                         assert( isspace( buf[0] ) );
 
@@ -213,9 +213,9 @@ void * getQuestion( const char *filename, question *qu )
 
                         // skip blank line
                         fgets( buf, MAX_QUESTION_LENGTH, IN );
-        #ifdef DEBUG
+#ifdef DEBUG
                         printf( "Just read in '%s'.\n", buf );
-        #endif
+#endif
                         assert( isspace( buf[0] ) );
 
                 }
